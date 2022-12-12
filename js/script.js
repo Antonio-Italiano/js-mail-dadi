@@ -52,32 +52,35 @@ const resultElement = document.getElementById('result');
 // Elementi DOM
 const emailElement = document.getElementById('email');
 const buttonElement = document.getElementById('button');
-
+const noticeElement = document.getElementById('notice');
 // 1 - Inventa una lista di email autorizzate
 const accounts = ["antoitalia@gmail.com", "italiaanto@gmail.com", "anto100@gmail.com"];
 
 
 buttonElement.addEventListener ('click', function() {
     
+    const emailValue = emailElement.value;
+
     let access = 'negato';
 
     for (let i = 0; i < accounts.length; i++) {
 
         let item = accounts[i];
         
-        if (emailElement == item) {
+        if (emailValue == item) {
             access = 'accettato';
         }
     }
 
-    let result = accounts; 
+    let result = ''; 
 
     if (access == 'accettato') {
-        result = 'puoi accedere';
+        result = 'Email corretta puoi accedere';
         console.log(result);
     } else {
-        result = 'non puoi accedere'
+        result = 'Email errata non puoi accedere'
         console.log(result);
     }
 
+    noticeElement.innerText = result;
 })
