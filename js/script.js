@@ -4,9 +4,9 @@
 // 3 - Stampiamo in pagina i due tiri e il risultato
 
 // Elementi DOM
-const playerNumber = document.getElementById('player')
-const computerNumber = document.getElementById('computer')
-const resultElement = document.getElementById('result')
+const playerNumber = document.getElementById('player');
+const computerNumber = document.getElementById('computer');
+const resultElement = document.getElementById('result');
 
 
 // 1 - Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
@@ -38,3 +38,46 @@ const resultElement = document.getElementById('result')
     playerNumber.innerText ='numero player: ' + player ;
     computerNumber.innerText ='numero computer: ' +  computer ;
     resultElement.innerText = winner ;
+
+
+/**********************************************************
+ 
+ **********************************************************/
+//  ESERCIZIO 2 - Finta Login
+// 1 - Inventa una lista di email autorizzate
+// 2 - Chiedi all’utente la sua email, con un piccolo form.
+// 3 - controlla che sia nella lista di chi può accedere,
+// 4 - stampa un messaggio appropriato sull’esito del controllo.
+
+// Elementi DOM
+const emailElement = document.getElementById('email');
+const buttonElement = document.getElementById('button');
+
+// 1 - Inventa una lista di email autorizzate
+const accounts = ["antoitalia@gmail.com", "italiaanto@gmail.com", "anto100@gmail.com"];
+
+
+buttonElement.addEventListener ('click', function() {
+    
+    let access = 'negato';
+
+    for (let i = 0; i < accounts.length; i++) {
+
+        let item = accounts[i];
+        
+        if (emailElement == item) {
+            access = 'accettato';
+        }
+    }
+
+    let result = accounts; 
+
+    if (access == 'accettato') {
+        result = 'puoi accedere';
+        console.log(result);
+    } else {
+        result = 'non puoi accedere'
+        console.log(result);
+    }
+
+})
