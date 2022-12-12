@@ -9,3 +9,13 @@ const computerNumber = document.getElementById('computer')
 const resultElement = document.getElementById('result')
 
 
+// 1 - Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+
+    // generiamo il numero random del giocatore da 1 a 6
+    const player = Math.floor(Math.random() * 6) + 1;
+    console.log(player)
+
+    // generiamo il numero random del computer da 1 a 6
+    const computer = Math.floor(Math.random() * 6) + 1;
+    console.log(computer)
+    
