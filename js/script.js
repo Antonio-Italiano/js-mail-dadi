@@ -3,4 +3,9 @@
 // 2 - Stabilire il vincitore, in base a chi fa il punteggio più alto.
 // 3 - Stampiamo in pagina i due tiri e il risultato
 
+// Elementi DOM
+const playerNumber = document.getElementById('player')
+const computerNumber = document.getElementById('computer')
+const resultElement = document.getElementById('result')
+
 
