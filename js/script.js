@@ -13,11 +13,11 @@ const resultElement = document.getElementById('result')
 
     // generiamo il numero random del giocatore da 1 a 6
     const player = Math.floor(Math.random() * 6) + 1;
-    console.log(player)
+    // console.log(player)
 
     // generiamo il numero random del computer da 1 a 6
     const computer = Math.floor(Math.random() * 6) + 1;
-    console.log(computer)
+    // console.log(computer)
     
 // 2 - Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
@@ -25,12 +25,16 @@ const resultElement = document.getElementById('result')
 
     if (player > computer) {
       winner = 'vincitore player';
-        console.log(winner)
+        // console.log(winner)
     } else if (player < computer) {
       winner = 'vincitore computer';
-        console.log(winner)
+        // console.log(winner)
     } else {
       winner = 'pareggio';        
-        console.log(winner)
+        // console.log(winner)
     }
 
+// 3 - Stampiamo in pagina i due tiri e il risultato
+    playerNumber.innerText ='numero player: ' + player ;
+    computerNumber.innerText ='numero computer: ' +  computer ;
+    resultElement.innerText = winner ;
