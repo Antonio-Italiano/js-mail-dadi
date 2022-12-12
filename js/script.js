@@ -19,3 +19,18 @@ const resultElement = document.getElementById('result')
     const computer = Math.floor(Math.random() * 6) + 1;
     console.log(computer)
     
+// 2 - Stabilire il vincitore, in base a chi fa il punteggio più alto.
+
+    winner = '';
+
+    if (player > computer) {
+      winner = 'vincitore player';
+        console.log(winner)
+    } else if (player < computer) {
+      winner = 'vincitore computer';
+        console.log(winner)
+    } else {
+      winner = 'pareggio';        
+        console.log(winner)
+    }
+
