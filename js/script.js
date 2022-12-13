@@ -58,29 +58,27 @@ const accounts = ["antoitalia@gmail.com", "italiaanto@gmail.com", "anto100@gmail
 
 
 buttonElement.addEventListener ('click', function() {
+    // Raccolgo il valore dell'input
+    const emailValue = emailElement.value.trim();
+
+    // validazione 
+    if (!emailValue){
+        noticeElement.innerText = 'non hai inserito nessuna mail';
+        return;
+    }
+
+    let isAllowed = false;
     
-    const emailValue = emailElement.value;
-
-    let access = 'negato';
-
-    for (let i = 0; i < accounts.length; i++) {
-
-        let item = accounts[i];
+    // controllo se l'email è corretta 
+    for (let i = 0; !isAllowed && i < accounts.length; i++) {
+        const item = accounts[i];
         
-        if (emailValue == item) {
-            access = 'accettato';
+        if (emailValue === item) {
+            isAllowed = true;
         }
     }
 
-    let result = ''; 
-
-    if (access == 'accettato') {
-        result = 'Email corretta puoi accedere';
-        console.log(result);
-    } else {
-        result = 'Email errata non puoi accedere'
-        console.log(result);
-    }
-
-    noticeElement.innerText = result;
+    // ternario mettere la costante = con la condizione ? 'se vero' : 'se falso';
+    noticeElement.innerText = isAllowed ? "Email corretta puoi accedere" : "Email errata non puoi accedere";
+    
 })
